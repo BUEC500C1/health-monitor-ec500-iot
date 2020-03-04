@@ -17,9 +17,10 @@ class Scheduler():
 
     def create_job(self, func, **kwargs):
         jobId = str(uuid.uuid4())
-        logging.info('Creating job with UUID: {}'.format(jobId))
         self.sched.add_job(func, 'interval', id=jobId, **kwargs)
         self.jobSet.append(jobId)
+        logging.info('Creating job with UUID: {}'.format(jobId))
+
 
         return jobId
 
