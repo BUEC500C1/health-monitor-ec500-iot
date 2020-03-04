@@ -6,6 +6,7 @@ def myfunc():
 
 scheduler = Scheduler()
 
+# or minuets=1 or hours=1 ... etc. check documentation for other input args
 id = scheduler.create_job(myfunc, seconds=1)
 print(">>> created job", id)
 
