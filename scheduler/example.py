@@ -1,7 +1,6 @@
 from scheduler import Scheduler
 import time
 
-#demo of the code
 def myfunc():
     print("in job...")
 
