@@ -20,14 +20,11 @@ class Scheduler():
         self.sched.add_job(func, 'interval', id=jobId, **kwargs)
         self.jobSet.append(jobId)
         logging.info('Created job with UUID: {}'.format(jobId))
-
-
         return jobId
 
     def remove_job(self, jobId):
         self.sched.remove_job(jobId)
         logging.info('Removed job with UUID: {}'.format(jobId))
-
 
     def list_jobs(self):
         return self.jobSet
