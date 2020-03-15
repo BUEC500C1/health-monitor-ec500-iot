@@ -1,8 +1,9 @@
 import sqlite3
 import datetime
+import database_queries as dbq
 
 def connect_database():
-    db = sqlite3.connect('database.db')
+    db = sqlite3.connect(dbq.db_name)
     return db
 
 def get_time():
@@ -21,8 +22,8 @@ def create_tables():
     db = connect_database()
     print("Creating tables . . . ")
     # Checks if table exists before creation
-    db.execute('create table if not exists Data (PatientID TEXT, Timestamp TEXT, Type TEXT, Value TEXT)')
-    db.execute('create table if not exists Alerts (PatientID TEXT, Timestamp TEXT, Type TEXT, ThresholdLow TEXT, ThresholdHigh TEXT, Value TEXT)')
+    db.execute(dbq.init_data_table)
+    db.execute(dbq.init_alerts_table)
 
 '''
 Description:
@@ -39,8 +40,7 @@ def add_data_item(patientID, entrytype, value):
     if value is None:
         return
 
-    db.execute("INSERT INTO Data (PatientID, Timestamp, Type, Value) \
-               VALUES (?,?,?,?)",(patientID, get_time(), entrytype, value) )
+    db.execute(dbq.add_data_item, (patientID, get_time(), entrytype, value) )
     db.commit()
     print("Data item added successfully")
 
@@ -76,30 +76,29 @@ inputs:
 '''
 def add_alerts_item(patientID, entrytype, threshold_low, threshold_high, value):
     db = connect_database()
-    db.execute("INSERT INTO Alerts (PatientID, Timestamp, Type, ThresholdLow, ThresholdHigh, Value) \
-               VALUES (?,?,?,?,?,?)",(patientID, get_time(), entrytype, threshold_low, threshold_high, value) )
+    db.execute(dbq.add_alert_item,(patientID, get_time(), entrytype, threshold_low, threshold_high, value) )
     db.commit()
     print("Alerts item added successfully")
 
-# get_entire_table returns all entries of the desired table
-def get_entire_table(table):
+# get_table returns all entries of the desired table
+def get_table(table):
     cur = connect_database().cursor()
-    cur.execute(f"select * from {table}")
+    cur.execute(get_table(table))
     rows = cur.fetchall(); 
     return rows
 
 # get_all_info_for_patientid returns all items for a specific patient
-def get_all_info_for_patientid(tablename, patientid):
+def get_patient(tablename, patientid):
     cur = connect_database().cursor()
-    cur.execute(f"SELECT * FROM {tablename} WHERE PatientID=?", (patientid,))
+    cur.execute(dbq.patient_info(tablename, patientid))
     rows = cur.fetchall()
     return rows
 
 # get_entrytype_info_for_patientid returns all items of a specific type for a specific patient
-def get_entrytype_info_for_patientid(tablename, patientid, entrytype):
+def get_type_patient_info(tablename, patientid, entrytype):
     db = connect_database()
     cur = db.cursor()
-    cur.execute(f"SELECT * FROM {tablename} WHERE PatientID=? AND Type=?", (patientid,entrytype,))
+    cur.execute(dbq.type_patient_info(tablename, patientid, entrytype))
     rows = cur.fetchall()
     return rows
 
@@ -107,8 +106,8 @@ def get_entrytype_info_for_patientid(tablename, patientid, entrytype):
 def delete_patient(patientid):
     db = connect_database()
     cur = db.cursor()
-    cur.execute(f"DELETE FROM Data WHERE PatientID=?", (patientid,))
-    cur.execute(f"DELETE FROM Alerts WHERE PatientID=?", (patientid,))
+    cur.execute(dbq.delete_patient("Data", patientid))
+    cur.execute(dbq.delete_patient("Alerts", patientid))
     db.commit()
     print(f"Patient {patientid} has been deleted")
 
@@ -116,8 +115,8 @@ def delete_patient(patientid):
 def print_all_tables():
     db = connect_database()
     # List all entries in the tables 'Data' and 'Alerts'
-    data_all = get_entire_table(db, 'Data')
-    alerts_all = get_entire_table(db, 'Alerts')
+    data_all = get_table(db, 'Data')
+    alerts_all = get_table(db, 'Alerts')
     print("\n[~~~] TABLE DATA [~~~]\n", data_all)
     print("\n[~~~] TABLE ALERTS [~~~]\n", alerts_all)
 
@@ -137,8 +136,8 @@ if __name__ == '__main__':
     add_alerts_item('1141', 'oxygen', '0.95', '0.96', '0.97')
 
     # Get all info from table Data on Patient '1141' and print out to terminal
-    all_info = get_all_info_for_patientid('Data', '1141')
-    oxygen_info = get_entrytype_info_for_patientid('Data', '1141', 'O')
+    all_info = get_patient('Data', '1141')
+    oxygen_info = get_type_patient_info('Data', '1141', 'bps')
     print(f"\nAll info for Patient '1141': {all_info}\n")
     print(f"Oxygen info for Patient '1141': {oxygen_info}\n")
 
@@ -146,7 +145,7 @@ if __name__ == '__main__':
     delete_patient('1141')
 
     # Reprint information to confirm all info deleted for Patient '1141'
-    all_info = get_all_info_for_patientid('Data', '1141')
+    all_info = get_patient('Data', '1141')
     print(f"All info for Patient '1141': {all_info}\n")
 
     # Call update function to add all three datatypes at once
@@ -154,7 +153,7 @@ if __name__ == '__main__':
     add_all_into_data('1141', oxygen='0.98', pulse='100')
 
     # Reprint information for recent addition after deletion for Patient '1141'
-    all_info = get_all_info_for_patientid('Data', '1141')
+    all_info = get_patient('Data', '1141')
     print(f"All info for Patient '1141': {all_info}\n")
 
     # Clean database for next iteration of testing
