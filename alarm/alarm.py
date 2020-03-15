@@ -8,6 +8,8 @@ class Alarm():
         self.name = name
 
     def check_threshold(self, value):
+        if value is None:
+            return
         if not self.threshold_low < value < self.threshold_high:
             print(
                 f"Alarm {self.name} went out of range ({self.threshold_low}, {self.threshold_high}) with value {value}!")
@@ -21,7 +23,7 @@ alarms = {
 }
 
 
-def update(oxygen, pulse, blood_pressure):
+def update(oxygen=None, pulse=None, blood_pressure=None):
     alarms["oxygen"].check_threshold(oxygen)
     alarms["pulse"].check_threshold(pulse)
     alarms["blood_pressure"].check_threshold(blood_pressure)
