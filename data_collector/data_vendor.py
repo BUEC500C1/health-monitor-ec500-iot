@@ -29,7 +29,7 @@ class DataVendor():
             self.bpd = self.bps - 40  # Fake a normal offset for diastolic
             self.pulse = self.pulse_sock.get_value()
             self.oxygen = self.oxygen_sock.get_value()
-            sleep(0.1)
+            sleep(0.05)
 
 
 if __name__ == '__main__':
