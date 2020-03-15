@@ -2,6 +2,7 @@ import socket
 import sys
 import os
 import threading
+import struct
 from smooth_random import SmoothRandom
 
 
@@ -22,8 +23,8 @@ class FakeDataSender():
 
     def send_data(self, connection):
         try:
-            val = str(next(self.data_gen)).encode('ascii')
-            connection.sendall(val + b'\n')
+            val = struct.pack('<B', next(self.data_gen))
+            connection.send(val)
             t = threading.Timer(0.1, self.send_data, args=(connection,))
             t.daemon = True
             t.start()
