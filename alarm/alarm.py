@@ -1,6 +1,5 @@
 from gmail_handler import send_email
-
-EMAIL_TO_NOTIFY = "rjewing@bu.edu"  # Set to the email you want to notify
+from config import config
 
 
 class Alarm():
@@ -9,13 +8,13 @@ class Alarm():
         self.threshold_high = threshold_high
         self.name = name
 
-    def check_threshold(self, value):
+    def check_threshold(self, patient_id, value):
         if value is None:
             return
         if not self.threshold_low < value < self.threshold_high:
             print(
                 f"Alarm {self.name} went out of range ({self.threshold_low}, {self.threshold_high}) with value {value}!")
-            send_email(EMAIL_TO_NOTIFY, self.name, value,
+            send_email(config['email']['notify'], patient_id, self.name, value,
                        (self.threshold_low, self.threshold_high))
 
 
@@ -27,11 +26,11 @@ alarms = {
 }
 
 
-def update(patiend_id, oxygen=None, pulse=None, bps=None, bpd=None):
-    alarms["oxygen"].check_threshold(oxygen)
-    alarms["pulse"].check_threshold(pulse)
-    alarms["bps"].check_threshold(bps)
-    alarms["bpd"].check_threshold(bpd)
+def update(patient_id, oxygen=None, pulse=None, bps=None, bpd=None):
+    alarms["oxygen"].check_threshold(patient_id, oxygen)
+    alarms["pulse"].check_threshold(patient_id, pulse)
+    alarms["bps"].check_threshold(patient_id, bps)
+    alarms["bpd"].check_threshold(patient_id, bpd)
 
 
 if __name__ == '__main__':
