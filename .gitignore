@@ -1,2 +1,4 @@
-venv
-database.db
+.vscode
+.DS_Store
+__pycache__
+*.pyc
