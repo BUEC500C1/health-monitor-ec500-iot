@@ -5,7 +5,6 @@ def connect_database():
     print("Database opened successfully")
     return conn
 
-# TODO: Decide what to store ID, Timestamp, and Value as
 '''
     Oxygen (Saturation): A Percentage
         e.g 97% or 0.97
@@ -21,7 +20,16 @@ def create_tables(db):
     db.execute('create table if not exists Data (PatientID TEXT, Timestamp TEXT, Type TEXT, Value TEXT)')
     db.execute('create table if not exists Alerts (PatientID TEXT, Timestamp TEXT, Type TEXT, ThresholdLow TEXT, ThresholdHigh TEXT, Value TEXT)')
 
+'''
+Description:
+    add_data_item adds one type (bp, o, p) item to the data database
 
+inputs:
+    patientID: The patient's identification code
+    timestamp: Time recorded
+    entrytype: Either Oxygen 'O', Pulse 'P', or Blood Pressure 'BP'
+    value:     The type's value to be stored
+'''
 def add_data_item(db, patientID, timestamp, entrytype, value):
     if value is None:
         return
@@ -31,35 +39,64 @@ def add_data_item(db, patientID, timestamp, entrytype, value):
     db.commit()
     print("Data item added successfully")
 
+'''
+Description:
+    add_all_types_items adds up to all three items to the data database;
+    when calling, use parameterized function syntax
+
+inputs:
+    patientID:      The patient's identification code
+    timestamp:      Time recorded
+    oxygenValue:    Oxygen level, can be left out
+    pulseValue:     Pulse value, can be left out
+    bpValue:        Blood Pressure level, can be left out
+'''
 def add_all_types_items(db, patientID, timestamp, oxygenValue=None, pulseValue=None, bpValue=None):
     add_data_item(db, patientID, timestamp, 'O', oxygenValue)
     add_data_item(db, patientID, timestamp, 'P', pulseValue)
     add_data_item(db, patientID, timestamp, 'BP', bpValue)
 
+'''
+Description:
+    add_alerts_item adds an alert item to the alert database
+
+inputs:
+    patientID:      The patient's identification code
+    timestamp:      Time recorded
+    entrytype:      Either Oxygen 'O', Pulse 'P', or Blood Pressure 'BP'
+    threshold_low:  Lower threshold value for type entrytype
+    threshold_high: Higher threshold value for type entrytype
+    value:          actual recorded value
+'''
 def add_alerts_item(db, patientID, timestamp, entrytype, threshold_low, threshold_high, value):
     db.execute("INSERT INTO Alerts (PatientID, Timestamp, Type, ThresholdLow, ThresholdHigh, Value) \
                VALUES (?,?,?,?,?,?)",(patientID, timestamp, entrytype, threshold_low, threshold_high, value) )
     db.commit()
     print("Alerts item added successfully")
 
+
+# get_entire_table returns all entries of the desired table
 def get_entire_table(db, table):
     cur = db.cursor()
     cur.execute(f"select * from {table}")
     rows = cur.fetchall(); 
     return rows
 
+# get_all_info_for_patientid returns all items for a specific patient
 def get_all_info_for_patientid(db, tablename, patientid):
     cur = db.cursor()
     cur.execute(f"SELECT * FROM {tablename} WHERE PatientID=?", (patientid,))
     rows = cur.fetchall()
     return rows
 
+# get_entrytype_info_for_patientid returns all items of a specific type for a specific patient
 def get_entrytype_info_for_patientid(db, tablename, patientid, entrytype):
     cur = db.cursor()
     cur.execute(f"SELECT * FROM {tablename} WHERE PatientID=? AND Type=?", (patientid,entrytype,))
     rows = cur.fetchall()
     return rows
 
+# delete_patient deletes all information about a patient from both tables
 def delete_patient(db, patientid):
     cur = db.cursor()
     cur.execute(f"DELETE FROM Data WHERE PatientID=?", (patientid,))
@@ -67,6 +104,7 @@ def delete_patient(db, patientid):
     db.commit()
     print(f"Patient {patientid} has been deleted")
 
+# print_all_tables prints both tables to the terminal line
 def print_all_tables(db):
     # List all entries in the tables 'Data' and 'Alerts'
     data_all = get_entire_table(db, 'Data')
@@ -74,6 +112,7 @@ def print_all_tables(db):
     print("\n[~~~] TABLE DATA [~~~]\n", data_all)
     print("\n[~~~] TABLE ALERTS [~~~]\n", alerts_all)
 
+# close_database closes the opened database
 def close_database(db):
     db.close()
     print("Database closed successfully")
