@@ -19,18 +19,26 @@ def create_tables(db):
     print("Creating tables . . . ")
     # Checks if table exists before creation
     db.execute('create table if not exists Data (PatientID TEXT, Timestamp TEXT, Type TEXT, Value TEXT)')
-    db.execute('create table if not exists Alerts (PatientID TEXT, Timestamp TEXT, Type TEXT, Threshold TEXT, Value TEXT)')
+    db.execute('create table if not exists Alerts (PatientID TEXT, Timestamp TEXT, Type TEXT, ThresholdLow TEXT, ThresholdHigh TEXT, Value TEXT)')
 
 
 def add_data_item(db, patientID, timestamp, entrytype, value):
+    if value is None:
+        return
+
     db.execute("INSERT INTO Data (PatientID, Timestamp, Type, Value) \
                VALUES (?,?,?,?)",(patientID, timestamp, entrytype, value) )
     db.commit()
     print("Data item added successfully")
 
-def add_alerts_item(db, patientID, timestamp, entrytype, threshold, value):
-    db.execute("INSERT INTO Alerts (PatientID, Timestamp, Type, Threshold, Value) \
-               VALUES (?,?,?,?,?)",(patientID, timestamp, entrytype, threshold, value) )
+def add_all_types_items(db, patientID, timestamp, oxygenValue=None, pulseValue=None, bpValue=None):
+    add_data_item(db, patientID, timestamp, 'O', oxygenValue)
+    add_data_item(db, patientID, timestamp, 'P', pulseValue)
+    add_data_item(db, patientID, timestamp, 'BP', bpValue)
+
+def add_alerts_item(db, patientID, timestamp, entrytype, threshold_low, threshold_high, value):
+    db.execute("INSERT INTO Alerts (PatientID, Timestamp, Type, ThresholdLow, ThresholdHigh, Value) \
+               VALUES (?,?,?,?,?,?)",(patientID, timestamp, entrytype, threshold_low, threshold_high, value) )
     db.commit()
     print("Alerts item added successfully")
 
@@ -81,9 +89,9 @@ if __name__ == '__main__':
 
     # Add data and alert items for Patient ID '1141'
     add_data_item(db, '1141', '2020-03-14 14:09:10.131', 'O', '0.97')
-    add_data_item(db, '1141', '2020-03-14 14:10:10.131', 'BP', '120/80')
     add_data_item(db, '1141', '2020-03-14 14:11:10.131', 'P', '90')
-    add_alerts_item(db, '1141', '2020-03-14 14:09:10.131', 'O', '0.96', '0.97')
+    add_data_item(db, '1141', '2020-03-14 14:10:10.131', 'BP', '120/80')
+    add_alerts_item(db, '1141', '2020-03-14 14:09:10.131', 'O', '0.95', '0.96', '0.97')
 
     # Get all info from table Data on Patient '1141' and print out to terminal
     all_info = get_all_info_for_patientid(db, 'Data', '1141')
@@ -95,6 +103,14 @@ if __name__ == '__main__':
     delete_patient(db, '1141')
 
     # Reprint information to confirm all info deleted for Patient '1141'
+    all_info = get_all_info_for_patientid(db, 'Data', '1141')
+    print(f"All info for Patient '1141': {all_info}\n")
+
+    # Call update function to add all three datatypes at once
+    add_all_types_items(db, '1141', '2020-03-15 14:11:10.131', oxygenValue='0.95', bpValue='120/80')
+    add_all_types_items(db, '1141', '2020-03-16 14:11:10.131', oxygenValue='0.98', pulseValue='100')
+
+    # Reprint information for recent addition after deletion for Patient '1141'
     all_info = get_all_info_for_patientid(db, 'Data', '1141')
     print(f"All info for Patient '1141': {all_info}\n")
 
