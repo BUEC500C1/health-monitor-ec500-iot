@@ -4,3 +4,5 @@ __pycache__
 *.socket
 .DS_Store
 venv
+*.db
+*.log

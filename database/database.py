@@ -57,6 +57,7 @@ inputs:
     bpd:        Diastolic Blood Pressure level, can be left out
 '''
 def add_all_into_data(patientID, oxygen=None, pulse=None, bps=None, bpd=None):
+    print(f"Adding data to db: {patientID}, {oxygen}, {pulse}, {bps}, {bpd}")
     db = connect_database()
     add_data_item(patientID, 'oxygen', oxygen)
     add_data_item(patientID, 'pulse', pulse)

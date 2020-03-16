@@ -1,11 +1,13 @@
 import smtplib
 import os
 
-GMAIL_EMAIL = os.environ["EC500_GMAIL_EMAIL"]
-GMAIL_PASSWORD = os.environ["EC500_GMAIL_PASSWORD"]
+GMAIL_EMAIL = os.environ.get("EC500_GMAIL_EMAIL")
+GMAIL_PASSWORD = os.environ.get("EC500_GMAIL_PASSWORD")
 
 
 def send_email(emails, patient_id, alarm_type, alarm_val, alarm_threshold: tuple):
+    if GMAIL_EMAIL is None or GMAIL_PASSWORD is None:
+        return
     low, high = alarm_threshold
     SUBJECT = f'EC500 HW5 - ICU monitor alarm for {patient_id} - {alarm_type}!'
     TEXT = f"""
