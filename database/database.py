@@ -132,8 +132,8 @@ if __name__ == '__main__':
     create_tables()
 
     # Add data and alert items for Patient ID '1141'
-    add_all_into_data('1141', oxygen='0.95', bps='120/80', pulse='100')
-    add_alerts_item('1141', 'oxygen', '0.95', '0.96', '0.97')
+    add_all_into_data('1141', oxygen=95, bps=120, pulse=100)
+    add_alerts_item('1141', 'oxygen', 95, 96, 97)
 
     # Get all info from table Data on Patient '1141' and print out to terminal
     all_info = get_patient('Data', '1141')
@@ -149,8 +149,8 @@ if __name__ == '__main__':
     print(f"All info for Patient '1141': {all_info}\n")
 
     # Call update function to add all three datatypes at once
-    add_all_into_data('1141', oxygen='0.95', bpd='120/80')
-    add_all_into_data('1141', oxygen='0.98', pulse='100')
+    add_all_into_data('1141', oxygen=95, bpd=80)
+    add_all_into_data('1141', oxygen=98, pulse=100)
 
     # Reprint information for recent addition after deletion for Patient '1141'
     all_info = get_patient('Data', '1141')
