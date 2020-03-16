@@ -45,3 +45,21 @@ values = vendor.get_values()
 # to unpack the values into individual variables
 patient_id, bps, bpd, pulse, oxygen = vendor.get_values()
 ```
+
+### Scheduler
+```python
+scheduler = Scheduler()
+
+# or minuets=1 or hours=1 ... etc. check documentation for other input args
+id = scheduler.create_job(myfunc, seconds=1)
+
+print(scheduler.list_jobs())
+
+scheduler.remove_job(id)
+```
+
+Note that all job creations and deletions are logged in `/scheduler/scheduler.log`
+
+Refer to `/scheduler/example.py` for full example
+
+All input args for `Scheduler.create_job(myfunc, args)` can be found [here](https://apscheduler.readthedocs.io/en/stable/modules/triggers/interval.html) 
