@@ -1,4 +1,18 @@
-# SQLite3 Database
+# Health Monitor
+## How to run
+1. `$ pip3 install -r requirements.txt`
+2. Run as separate processes:
+   ```
+    $ python3 data_generation/oxygen_collector.py &
+    $ python3 data_generation/bp_collector.py &
+    $ python3 data_generation/pulse_collector.py &
+   ```
+3. Run the main health monitor:
+   ```
+    $ python3 icu_monitor.py
+   ```
+
+## SQLite3 Database
 
 ## Finished ground work for sqlite3 database CRUD functions
 ### You can:

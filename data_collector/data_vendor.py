@@ -7,7 +7,7 @@ import data_vendor
 
 class DataVendor():
     def __init__(self):
-        self.patient_id = uuid.uuid4()
+        self.patient_id = str(uuid.uuid4())
         self.bp_sock = DataReceiver('bp.socket')
         self.pulse_sock = DataReceiver('pulse.socket')
         self.oxygen_sock = DataReceiver('oxygen.socket')

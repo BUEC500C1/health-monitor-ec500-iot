@@ -1,5 +1,6 @@
 from gmail_handler import send_email
 from config import config
+import database
 
 
 class Alarm():
@@ -11,18 +12,19 @@ class Alarm():
     def check_threshold(self, patient_id, value):
         if value is None:
             return
-        if not self.threshold_low < value < self.threshold_high:
+        if not self.threshold_low <= value <= self.threshold_high:
             print(
                 f"Alarm {self.name} went out of range ({self.threshold_low}, {self.threshold_high}) with value {value}!")
             send_email(config['email']['notify'], patient_id, self.name, value,
                        (self.threshold_low, self.threshold_high))
+            database.add_alerts_item(patient_id, self.name, self.threshold_low, self.threshold_high, value)
 
 
 alarms = {
-    "pulse": Alarm(80, 130, name="pulse"),
-    "oxygen": Alarm(90, 100, name="oxygen"),
-    "bps": Alarm(90, 160, name="blood_pressure_systolic"),
-    "bpd": Alarm(50, 120, name="blood_pressure_diastolic")
+    "pulse": Alarm(65, 130, name="pulse"),
+    "oxygen": Alarm(82, 100, name="oxygen"),
+    "bps": Alarm(90, 160, name="bps"),
+    "bpd": Alarm(50, 120, name="bpd")
 }
 
 
