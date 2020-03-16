@@ -3,8 +3,8 @@
 db_name = 'database.db'
 
 # Initialize sqlite3 tables
-init_data_table = 'create table if not exists Data (PatientID TEXT, Timestamp TEXT, Type TEXT, Value TEXT)'
-init_alerts_table = 'create table if not exists Alerts (PatientID TEXT, Timestamp TEXT, Type TEXT, ThresholdLow TEXT, ThresholdHigh TEXT, Value TEXT)'
+init_data_table = 'create table if not exists Data (PatientID TEXT, Timestamp TEXT, Type TEXT, Value INTEGER)'
+init_alerts_table = 'create table if not exists Alerts (PatientID TEXT, Timestamp TEXT, Type TEXT, ThresholdLow INTEGER, ThresholdHigh INTEGER, Value INTEGER)'
 
 # Adding to database
 add_data_item = "INSERT INTO Data (PatientID, Timestamp, Type, Value) VALUES (?,?,?,?)"
