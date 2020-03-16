@@ -3,3 +3,8 @@ email:
     notify:
         - "rjewing@bu.edu"
         - "dlhi@bu.edu"
+scheduler:
+    alarm:
+        interval: 1
+    database:
+        interval: 10

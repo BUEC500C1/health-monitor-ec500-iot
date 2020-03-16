@@ -1,5 +1,6 @@
 import sys
 from time import sleep
+from config import config
 
 sys.path.extend(['./alarm', './data_collector', './data_generation', './database', './scheduler'])
 
@@ -16,8 +17,8 @@ def main():
     database.create_tables()
     sched = scheduler.Scheduler(vendor)
 
-    sched.create_job(database.add_all_into_data, seconds=10)
-    sched.create_job(alarm.update, seconds=1)
+    sched.create_job(database.add_all_into_data, seconds=config['scheduler']['database']['interval'])
+    sched.create_job(alarm.update, seconds=config['scheduler']['alarm']['interval'])
 
     while True:
         sleep(1)
