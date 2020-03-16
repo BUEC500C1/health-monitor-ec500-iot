@@ -2,6 +2,7 @@ from data_receiver import DataReceiver
 from threading import Thread
 from time import sleep
 import uuid
+import data_vendor
 
 
 class DataVendor():
