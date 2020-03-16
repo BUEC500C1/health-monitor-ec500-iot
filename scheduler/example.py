@@ -1,13 +1,13 @@
 from scheduler import Scheduler
 import time
 
-def myfunc(message):
-    print("in job...", message)
+def myfunc(patient_id, **kwargs):
+    print("in job...", patient_id, kwargs)
 
 scheduler = Scheduler()
 
 # or minuets=1 or hours=1 ... etc. check documentation for other input args
-id = scheduler.create_job(lambda : myfunc("hi"), seconds=1)
+id = scheduler.create_job(myfunc, seconds=1)
 print(">>> created job", id)
 
 time.sleep(3)

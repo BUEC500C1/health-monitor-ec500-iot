@@ -1,0 +1,351 @@
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: ec81d914-859b-4086-a0dc-d060a5e0f370
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:48:35.678849-05:00 (in 0.999233 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:48:35 EST)" (scheduled at 2020-03-15 19:48:35.678849-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:48:36.678849-05:00 (in 0.998292 seconds)
+ERROR:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:48:36 EST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/chaseclarke/Library/Python/3.7/lib/python/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 24, in <lambda>
+    self.sched.add_job(lambda : task_wrapper(func), 'interval', id=jobId, **kwargs)
+NameError: name 'task_wrapper' is not defined
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:48:36 EST)" (scheduled at 2020-03-15 19:48:36.678849-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:48:37.678849-05:00 (in 0.995223 seconds)
+ERROR:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:48:37 EST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/chaseclarke/Library/Python/3.7/lib/python/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 24, in <lambda>
+    self.sched.add_job(lambda : task_wrapper(func), 'interval', id=jobId, **kwargs)
+NameError: name 'task_wrapper' is not defined
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:48:37 EST)" (scheduled at 2020-03-15 19:48:37.678849-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:48:38.678849-05:00 (in 0.997987 seconds)
+ERROR:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:48:38 EST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/chaseclarke/Library/Python/3.7/lib/python/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 24, in <lambda>
+    self.sched.add_job(lambda : task_wrapper(func), 'interval', id=jobId, **kwargs)
+NameError: name 'task_wrapper' is not defined
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: 65091df5-dbd2-4683-b15c-f3088ae32753
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:49:30.442314-05:00 (in 0.999489 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:49:30 EST)" (scheduled at 2020-03-15 19:49:30.442314-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:49:31.442314-05:00 (in 0.996118 seconds)
+ERROR:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:49:31 EST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/chaseclarke/Library/Python/3.7/lib/python/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 24, in <lambda>
+    self.sched.add_job(lambda : task_wrapper(func), 'interval', id=jobId, **kwargs)
+NameError: name 'task_wrapper' is not defined
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:49:31 EST)" (scheduled at 2020-03-15 19:49:31.442314-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:49:32.442314-05:00 (in 0.997246 seconds)
+ERROR:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:49:32 EST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/chaseclarke/Library/Python/3.7/lib/python/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 24, in <lambda>
+    self.sched.add_job(lambda : task_wrapper(func), 'interval', id=jobId, **kwargs)
+NameError: name 'task_wrapper' is not defined
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:49:32 EST)" (scheduled at 2020-03-15 19:49:32.442314-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:49:33.442314-05:00 (in 0.994051 seconds)
+ERROR:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:49:33 EST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/chaseclarke/Library/Python/3.7/lib/python/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 24, in <lambda>
+    self.sched.add_job(lambda : task_wrapper(func), 'interval', id=jobId, **kwargs)
+NameError: name 'task_wrapper' is not defined
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:49:33 EST)" (scheduled at 2020-03-15 19:49:33.442314-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:49:34.442314-05:00 (in 0.995932 seconds)
+ERROR:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:49:34 EST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/chaseclarke/Library/Python/3.7/lib/python/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 24, in <lambda>
+    self.sched.add_job(lambda : task_wrapper(func), 'interval', id=jobId, **kwargs)
+NameError: name 'task_wrapper' is not defined
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: 677c853b-884c-455b-affe-342aa6654519
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: 65793f95-c809-46c2-9a6d-20a90835d174
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:51:17.908621-05:00 (in 0.999155 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:No jobs; waiting until a job is added
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: a8483bcd-975a-4018-adaa-e0c86089ff8f
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:51:17.909798-05:00 (in 0.999721 seconds)
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: 2606dad6-2ff9-485e-b10a-f815e05e1bcc
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:52:12.532446-05:00 (in 0.999305 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:52:12 EST)" (scheduled at 2020-03-15 19:52:12.532446-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:52:13.532446-05:00 (in 0.994782 seconds)
+ERROR:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:52:13 EST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/chaseclarke/Library/Python/3.7/lib/python/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 25, in <lambda>
+    self.sched.add_job(lambda : task_wrapper(func), 'interval', id=jobId, **kwargs)
+NameError: name 'task_wrapper' is not defined
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:52:13 EST)" (scheduled at 2020-03-15 19:52:13.532446-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:52:14.532446-05:00 (in 0.992996 seconds)
+ERROR:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:52:14 EST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/chaseclarke/Library/Python/3.7/lib/python/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 25, in <lambda>
+    self.sched.add_job(lambda : task_wrapper(func), 'interval', id=jobId, **kwargs)
+NameError: name 'task_wrapper' is not defined
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: b6f95cc7-ac9e-4a39-8389-e4ae2111154f
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:00.525838-05:00 (in 0.999429 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:00 EST)" (scheduled at 2020-03-15 19:54:00.525838-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:00 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:01.525838-05:00 (in 0.994524 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:01 EST)" (scheduled at 2020-03-15 19:54:01.525838-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:01 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:02.525838-05:00 (in 0.994814 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:02 EST)" (scheduled at 2020-03-15 19:54:02.525838-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:03.525838-05:00 (in 0.996225 seconds)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:03 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:03 EST)" (scheduled at 2020-03-15 19:54:03.525838-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:04.525838-05:00 (in 0.993646 seconds)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:04 EST)" executed successfully
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:No jobs; waiting until a job is added
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: 389b6417-e825-4385-a46a-1ba02a2e78a7
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:04 EST)" (scheduled at 2020-03-15 19:54:04.525838-05:00)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:05.528892-05:00 (in 0.998830 seconds)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:05.525838-05:00 (in 0.996376 seconds)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:05 EST)" executed successfully
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: 7d379564-aff2-47b6-ab86-efbddc9476fb
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: 39d15613-10ff-4645-848a-fd35dea0fc82
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:19.037837-05:00 (in 0.999337 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:19 EST)" (scheduled at 2020-03-15 19:54:19.037837-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:19 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:20.037837-05:00 (in 0.998310 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:20 EST)" (scheduled at 2020-03-15 19:54:20.037837-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:20 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:21.037837-05:00 (in 0.993426 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:21 EST)" (scheduled at 2020-03-15 19:54:21.037837-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:21 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:22.037837-05:00 (in 0.996164 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:22 EST)" (scheduled at 2020-03-15 19:54:22.037837-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:22 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:23.037837-05:00 (in 0.994121 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:23 EST)" (scheduled at 2020-03-15 19:54:23.037837-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:24.037837-05:00 (in 0.993806 seconds)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:24 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:24 EST)" (scheduled at 2020-03-15 19:54:24.037837-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:24 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:25.037837-05:00 (in 0.997539 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:25 EST)" (scheduled at 2020-03-15 19:54:25.037837-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:25 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:26.037837-05:00 (in 0.996042 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:26 EST)" (scheduled at 2020-03-15 19:54:26.037837-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:27.037837-05:00 (in 0.998089 seconds)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:27 EST)" executed successfully
+INFO:apscheduler.scheduler:Removed job 39d15613-10ff-4645-848a-fd35dea0fc82
+INFO:root:Removed job with UUID: 39d15613-10ff-4645-848a-fd35dea0fc82
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: 5fcee287-0c7c-44da-beb7-7e46fe218976
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:49.570735-05:00 (in 0.999369 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:49 EST)" (scheduled at 2020-03-15 19:54:49.570735-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:49 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:50.570735-05:00 (in 0.997322 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:50 EST)" (scheduled at 2020-03-15 19:54:50.570735-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:50 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:51.570735-05:00 (in 0.993104 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:51 EST)" (scheduled at 2020-03-15 19:54:51.570735-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:51 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:52.570735-05:00 (in 0.994077 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:52 EST)" (scheduled at 2020-03-15 19:54:52.570735-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:54:52 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:54:53.570735-05:00 (in 0.993201 seconds)
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: 215f4fc9-7082-448d-a485-357ab9721ee9
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:55:02.586676-05:00 (in 0.999312 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:55:02 EST)" (scheduled at 2020-03-15 19:55:02.586676-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:55:02 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:55:03.586676-05:00 (in 0.995587 seconds)
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: 5c4d058f-9c85-4a18-89c3-227cfe7c1c64
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:55:26.905048-05:00 (in 0.999322 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:55:26 EST)" (scheduled at 2020-03-15 19:55:26.905048-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:55:26 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:55:27.905048-05:00 (in 0.998630 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:55:27 EST)" (scheduled at 2020-03-15 19:55:27.905048-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:55:27 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:55:28.905048-05:00 (in 0.996874 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:55:28 EST)" (scheduled at 2020-03-15 19:55:28.905048-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:55:28 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:55:29.905048-05:00 (in 0.995448 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:55:29 EST)" (scheduled at 2020-03-15 19:55:29.905048-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:55:30.905048-05:00 (in 0.997160 seconds)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:55:30 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:55:30 EST)" (scheduled at 2020-03-15 19:55:30.905048-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:55:31.905048-05:00 (in 0.993676 seconds)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:55:31 EST)" executed successfully
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: e9649eac-1b49-41d8-a54e-8c44c870ca84
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:56:00.899630-05:00 (in 0.999351 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:56:00 EST)" (scheduled at 2020-03-15 19:56:00.899630-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:56:01.899630-05:00 (in 0.998082 seconds)
+ERROR:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:56:01 EST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/chaseclarke/Library/Python/3.7/lib/python/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 20, in <lambda>
+    self.sched.add_job(lambda : self.task_wrapper(func), 'interval', id=jobId, **kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 33, in task_wrapper
+    patient_id, bps, bpd, pulse, oxygen = data_vendor.get_values()
+NameError: name 'data_vendor' is not defined
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:56:01 EST)" (scheduled at 2020-03-15 19:56:01.899630-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:56:02.899630-05:00 (in 0.995518 seconds)
+ERROR:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:56:02 EST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/chaseclarke/Library/Python/3.7/lib/python/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 20, in <lambda>
+    self.sched.add_job(lambda : self.task_wrapper(func), 'interval', id=jobId, **kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 33, in task_wrapper
+    patient_id, bps, bpd, pulse, oxygen = data_vendor.get_values()
+NameError: name 'data_vendor' is not defined
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: a5f5efa3-0cd3-4137-9fc7-16872e087652
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:57:10.467272-05:00 (in 0.999489 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:57:10 EST)" (scheduled at 2020-03-15 19:57:10.467272-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:57:11.467272-05:00 (in 0.994415 seconds)
+ERROR:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:57:11 EST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/chaseclarke/Library/Python/3.7/lib/python/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 25, in <lambda>
+    self.sched.add_job(lambda : self.task_wrapper(func), 'interval', id=jobId, **kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 38, in task_wrapper
+    patient_id, bps, bpd, pulse, oxygen = data_vendor.get_values()
+AttributeError: module 'data_vendor' has no attribute 'get_values'
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:57:11 EST)" (scheduled at 2020-03-15 19:57:11.467272-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:57:12.467272-05:00 (in 0.996862 seconds)
+ERROR:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:57:12 EST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/chaseclarke/Library/Python/3.7/lib/python/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 25, in <lambda>
+    self.sched.add_job(lambda : self.task_wrapper(func), 'interval', id=jobId, **kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 38, in task_wrapper
+    patient_id, bps, bpd, pulse, oxygen = data_vendor.get_values()
+AttributeError: module 'data_vendor' has no attribute 'get_values'
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:57:12 EST)" (scheduled at 2020-03-15 19:57:12.467272-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:57:13.467272-05:00 (in 0.996444 seconds)
+ERROR:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:57:13 EST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/chaseclarke/Library/Python/3.7/lib/python/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 25, in <lambda>
+    self.sched.add_job(lambda : self.task_wrapper(func), 'interval', id=jobId, **kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 38, in task_wrapper
+    patient_id, bps, bpd, pulse, oxygen = data_vendor.get_values()
+AttributeError: module 'data_vendor' has no attribute 'get_values'
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:57:13 EST)" (scheduled at 2020-03-15 19:57:13.467272-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 19:57:14.467272-05:00 (in 0.997823 seconds)
+ERROR:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 19:57:14 EST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/chaseclarke/Library/Python/3.7/lib/python/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 25, in <lambda>
+    self.sched.add_job(lambda : self.task_wrapper(func), 'interval', id=jobId, **kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 38, in task_wrapper
+    patient_id, bps, bpd, pulse, oxygen = data_vendor.get_values()
+AttributeError: module 'data_vendor' has no attribute 'get_values'
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: 42ff1144-d6e2-4dfc-9f5e-36299afdce6c
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 20:01:54.665167-05:00 (in 0.999364 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 20:01:54 EST)" (scheduled at 2020-03-15 20:01:54.665167-05:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 20:01:55.665167-05:00 (in 0.994505 seconds)
+ERROR:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 20:01:55 EST)" raised an exception
+Traceback (most recent call last):
+  File "/Users/chaseclarke/Library/Python/3.7/lib/python/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 25, in <lambda>
+    self.sched.add_job(lambda : self.task_wrapper(func), 'interval', id=jobId, **kwargs)
+  File "/Users/chaseclarke/EC500/health-monitor-ec500-yahia-david-rachid-chase-ryan/scheduler/scheduler.py", line 38, in task_wrapper
+    patient_id, bps, bpd, pulse, oxygen = data_vendor().get_values()
+TypeError: 'module' object is not callable
+INFO:apscheduler.scheduler:Added job "Scheduler.create_job.<locals>.<lambda>" to job store "default"
+INFO:root:Created job with UUID: 12373e0f-cec6-481e-b77a-e2c58754fe72
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 20:02:49.833133-05:00 (in 0.999238 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 20:02:49 EST)" (scheduled at 2020-03-15 20:02:49.833133-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 20:02:49 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 20:02:50.833133-05:00 (in 0.994812 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 20:02:50 EST)" (scheduled at 2020-03-15 20:02:50.833133-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 20:02:50 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 20:02:51.833133-05:00 (in 0.993229 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 20:02:51 EST)" (scheduled at 2020-03-15 20:02:51.833133-05:00)
+INFO:apscheduler.executors.default:Job "Scheduler.create_job.<locals>.<lambda> (trigger: interval[0:00:01], next run at: 2020-03-15 20:02:51 EST)" executed successfully
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2020-03-15 20:02:52.833133-05:00 (in 0.996954 seconds)
