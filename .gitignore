@@ -1,2 +1,8 @@
-scheduler/scheduler.log
-scheduler/scheduler.pyc
+.vscode
+__pycache__
+*.pyc
+*.socket
+.DS_Store
+venv
+*.db
+*.log
