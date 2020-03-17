@@ -92,7 +92,6 @@ def get_table(table):
 # get_all_info_for_patientid returns all items for a specific patient
 def get_patient(tablename, patientid):
     cur = connect_database().cursor()
-    print(dbq.patient_info(tablename, patientid))
     cur.execute(dbq.patient_info(tablename, patientid))
     rows = cur.fetchall()
     return rows
