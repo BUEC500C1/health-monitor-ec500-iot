@@ -1,9 +1,10 @@
 import sqlite3
 import datetime
 import database_queries as dbq
+import os 
 
 def connect_database():
-    db = sqlite3.connect(dbq.db_name)
+    db = sqlite3.connect(os.getcwd() + "/database/" + dbq.db_name)
     return db
 
 def get_time():
@@ -112,12 +113,20 @@ def delete_patient(patientid):
     db.commit()
     print(f"Patient {patientid} has been deleted")
 
+def get_all_patient_ids():
+    db = connect_database()
+    cur = db.cursor()
+    cur.execute(dbq.get_patient_ids("Data"))
+    rows = cur.fetchall()
+    return rows
+
+
 # print_all_tables prints both tables to the terminal line
 def print_all_tables():
     db = connect_database()
     # List all entries in the tables 'Data' and 'Alerts'
-    data_all = get_table(db, 'Data')
-    alerts_all = get_table(db, 'Alerts')
+    data_all = get_table('Data')
+    alerts_all = get_table('Alerts')
     print("\n[~~~] TABLE DATA [~~~]\n", data_all)
     print("\n[~~~] TABLE ALERTS [~~~]\n", alerts_all)
 
