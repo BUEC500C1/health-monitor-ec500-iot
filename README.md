@@ -11,6 +11,12 @@
    ```
     $ python3 icu_monitor.py
    ```
+4. Run the UI to see the data
+   ```
+    $ export FLASK_APP=main.py
+    $ export FLASK_DEBUG=1
+    $ python3 -m flask run
+   ```
 
 ## SQLite3 Database
 

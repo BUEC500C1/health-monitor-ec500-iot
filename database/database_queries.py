@@ -3,8 +3,8 @@
 db_name = 'database.db'
 
 # Initialize sqlite3 tables
-init_data_table = 'create table if not exists Data (PatientID TEXT, Timestamp TEXT, Type TEXT, Value INTEGER)'
-init_alerts_table = 'create table if not exists Alerts (PatientID TEXT, Timestamp TEXT, Type TEXT, ThresholdLow INTEGER, ThresholdHigh INTEGER, Value INTEGER)'
+init_data_table = 'create table if not exists Data (PatientID varchar(255), Timestamp TEXT, Type TEXT, Value INTEGER)'
+init_alerts_table = 'create table if not exists Alerts (PatientID varchar(255), Timestamp TEXT, Type TEXT, ThresholdLow INTEGER, ThresholdHigh INTEGER, Value INTEGER)'
 
 # Adding to database
 add_data_item = "INSERT INTO Data (PatientID, Timestamp, Type, Value) VALUES (?,?,?,?)"
@@ -17,12 +17,15 @@ def get_table(table):
 
 # patient_info returns command to get all info about one patient for a specified table
 def patient_info(tablename, patientid):
-    return f"SELECT * FROM {tablename} WHERE PatientID={patientid}"
+    return f"SELECT * FROM {tablename} WHERE PatientID='{patientid}'"
 
 # type_patient_info returns command to get all info about a particular type for a patient
 def type_patient_info(tablename, patientid, entrytype):
-    return f"SELECT * FROM {tablename} WHERE PatientID={patientid} AND Type='{entrytype}'"
+    return f"SELECT * FROM {tablename} WHERE PatientID='{patientid}' AND Type='{entrytype}'"
 
 # delete_patient returns a command to delete a patient's data in a particular table
 def delete_patient(tablename, patientid):
-    return f"DELETE FROM {tablename} WHERE PatientID={patientid}"
+    return f"DELETE FROM {tablename} WHERE PatientID='{patientid}'"
+
+def get_patient_ids(tablename):
+    return f"SELECT DISTINCT PatientID FROM {tablename}"
