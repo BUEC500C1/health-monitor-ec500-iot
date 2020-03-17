@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
-    <title>Health Monitors 420</title>
-  <link rel="stylesheet" href="static/css/table.css" type="text/css">
-  </head>
-  <body>
-    <h1><span class="blue">&lt;</span>Health Monitor<span class="blue">&gt;</span> <span class="yellow">Boom</pan></h1>
-        <h2>Created with love by <b>Yahia</b> & Rachitt & Ryan & David & Chase </h2>
-        
-        <table class="container">
-            <thead>
-                <tr>
-                    <th><h1>Patient Id</h1></th>
-                    <th><h1>Data</h1></th>
-                    <th><h1>Alerts</h1></th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for patient in patients %}
-                    <tr>
-                        <td> {{ patient[0] }}  </td>
-                        <td> <a href="/data?id={{patient[0]}}">Data</a></td>
-                        <td> <a href="/alerts?id={{patient[0]}}">Alerts</a></td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-  
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-  </body>
+    <title>Health Monitor</title>
+    <link rel="stylesheet" href="static/css/table.css" type="text/css">
+</head>
+
+<body>
+    <h1><span class="blue">&lt;</span>Health Monitor<span class="blue">&gt;</span> <span class="yellow">Boom</pan>
+    </h1>
+    <h2>Created with love by <b>Yahia</b> & Rachitt & Ryan & David & Chase </h2>
+
+    <table class="container">
+        <thead>
+            <tr>
+                <th>
+                    <h1>Patient Id</h1>
+                </th>
+                <th>
+                    <h1>Data</h1>
+                </th>
+                <th>
+                    <h1>Alerts</h1>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for patient in patients %}
+            <tr>
+                <td> {{ patient[0] }} </td>
+                <td> <a href="/data?id={{patient[0]}}">Data</a></td>
+                <td> <a href="/alerts?id={{patient[0]}}">Alerts</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+</body>
+
 </html>
