@@ -1,14 +1,17 @@
 import sqlite3
 import datetime
 import database_queries as dbq
-import os 
+import os
+
 
 def connect_database():
     db = sqlite3.connect(os.getcwd() + "/database/" + dbq.db_name)
     return db
 
+
 def get_time():
     return str(datetime.datetime.now())
+
 
 '''
     Oxygen (Saturation): A Percentage
@@ -19,12 +22,15 @@ def get_time():
         e.g. 120/80
 
 '''
+
+
 def create_tables():
     db = connect_database()
     print("Creating tables . . . ")
     # Checks if table exists before creation
     db.execute(dbq.init_data_table)
     db.execute(dbq.init_alerts_table)
+
 
 '''
 Description:
@@ -36,14 +42,17 @@ inputs:
     entrytype: Data type to be stored
     value:     The type's value to be stored
 '''
+
+
 def add_data_item(patientID, entrytype, value):
     db = connect_database()
     if value is None:
         return
 
-    db.execute(dbq.add_data_item, (patientID, get_time(), entrytype, value) )
+    db.execute(dbq.add_data_item, (patientID, get_time(), entrytype, value))
     db.commit()
     print("Data item added successfully")
+
 
 '''
 Description:
@@ -57,6 +66,8 @@ inputs:
     bps:        Systolic Blood Pressure level, can be left out
     bpd:        Diastolic Blood Pressure level, can be left out
 '''
+
+
 def add_all_into_data(patientID, oxygen=None, pulse=None, bps=None, bpd=None):
     print(f"Adding data to db: {patientID}, {oxygen}, {pulse}, {bps}, {bpd}")
     db = connect_database()
@@ -64,6 +75,7 @@ def add_all_into_data(patientID, oxygen=None, pulse=None, bps=None, bpd=None):
     add_data_item(patientID, 'pulse', pulse)
     add_data_item(patientID, 'bps', bps)
     add_data_item(patientID, 'bpd', bpd)
+
 
 '''
 Description:
@@ -76,20 +88,27 @@ inputs:
     threshold_high: Higher threshold value for type entrytype
     value:          actual recorded value
 '''
+
+
 def add_alerts_item(patientID, entrytype, threshold_low, threshold_high, value):
     db = connect_database()
-    db.execute(dbq.add_alert_item,(patientID, get_time(), entrytype, threshold_low, threshold_high, value) )
+    db.execute(dbq.add_alert_item, (patientID, get_time(),
+                                    entrytype, threshold_low, threshold_high, value))
     db.commit()
     print("Alerts item added successfully")
 
 # get_table returns all entries of the desired table
+
+
 def get_table(table):
     cur = connect_database().cursor()
     cur.execute(get_table(table))
-    rows = cur.fetchall(); 
+    rows = cur.fetchall()
     return rows
 
 # get_all_info_for_patientid returns all items for a specific patient
+
+
 def get_patient(tablename, patientid):
     cur = connect_database().cursor()
     cur.execute(dbq.patient_info(tablename, patientid))
@@ -97,6 +116,8 @@ def get_patient(tablename, patientid):
     return rows
 
 # get_entrytype_info_for_patientid returns all items of a specific type for a specific patient
+
+
 def get_type_patient_info(tablename, patientid, entrytype):
     db = connect_database()
     cur = db.cursor()
@@ -105,6 +126,8 @@ def get_type_patient_info(tablename, patientid, entrytype):
     return rows
 
 # delete_patient deletes all information about a patient from both tables
+
+
 def delete_patient(patientid):
     db = connect_database()
     cur = db.cursor()
@@ -112,6 +135,7 @@ def delete_patient(patientid):
     cur.execute(dbq.delete_patient("Alerts", patientid))
     db.commit()
     print(f"Patient {patientid} has been deleted")
+
 
 def get_all_patient_ids():
     db = connect_database()
@@ -131,9 +155,12 @@ def print_all_tables():
     print("\n[~~~] TABLE ALERTS [~~~]\n", alerts_all)
 
 # close_database closes the opened database
+
+
 def close_database(db):
     db.close()
     print("Database closed successfully")
+
 
 if __name__ == '__main__':
     print("Initializing Main Function . . .")

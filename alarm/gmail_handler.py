@@ -1,8 +1,9 @@
 import smtplib
 import os
 
-GMAIL_EMAIL = os.environ.get("EC500_GMAIL_EMAIL")
-GMAIL_PASSWORD = os.environ.get("EC500_GMAIL_PASSWORD")
+GMAIL_EMAIL = os.environ.get("EC500_GMAIL_EMAIL", None)
+GMAIL_PASSWORD = os.environ.get("EC500_GMAIL_PASSWORD", None)
+print(GMAIL_EMAIL, GMAIL_PASSWORD)
 
 
 def send_email(emails, patient_id, alarm_type, alarm_val, alarm_threshold: tuple):
